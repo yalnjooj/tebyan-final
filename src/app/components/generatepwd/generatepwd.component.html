@@ -1,0 +1,26 @@
+<!-- *ngIf="isOn -->
+<div class="loading-screen-wrapper" *ngIf="loading">
+  <div class="loading-screen-icon">
+    <img src="../../../assets/img/logo-move.gif" alt="logo-move">
+      <h3 class="white">{{verfiyForm}}</h3>
+    <button  class="btn btn-success" (click)="loading= false">إلغاء</button>
+  </div>
+</div>
+
+<div class="screen-wrapper" >
+  <div class="loading-screen-icon">
+      
+    <form class="text-right" novalidate #fo="ngForm" (ngSubmit)="mySubmit(fo)">
+      <div class="form-group white">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" name="email" id="email" placeholder="أدخل بريدك الإلكتروني" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" [(ngModel)]="user.email" #myemail="ngModel" required>
+      </div>
+   
+      <button type="submit" class="btn btn-primary" routerLink="#">إرسال</button>
+      
+      <div *ngIf="myemail.errors?.required && myemail.touched" class="alert alert-danger">أدخل البريد الإلكتروني</div>
+      <div *ngIf="myemail.errors?.pattern && myemail.touched" class="alert alert-danger">صيغة غير صحيحة!</div>
+
+    </form>
+  </div>
+</div>

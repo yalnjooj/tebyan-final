@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "HelveticaNeueW23forSKY-Bd";
+    src: url("./assets/fonts/HelveticaNeueW23forSKY-Bd.ttf");
+}
+
+html, body{
+    font-family: "HelveticaNeueW23forSKY-Bd", serif;
+    height:100%;
+}
+
+.loding{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.568);
+    position: fixed;
+    z-index: 1;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+.cont{
+ 
+ background-color: rgba(0, 0, 0, 0.459);
+ margin:auto;
+ width:auto;
+ height: auto;
+ border-radius: 7px;
+ padding: 15px;
+}
+
+.loding img{
+    width: 200px;
+}
+
+

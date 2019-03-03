@@ -1,0 +1,55 @@
+   /* loge loding... */
+   .screen-wrapper{
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.568);
+       position: fixed;
+       z-index: 1;
+       display: -webkit-flex; /* Safari */
+       display: flex;
+   }
+   .loading-screen-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.568);
+    position: fixed;
+    z-index: 100000;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+   .loading-screen-icon{
+    
+    background-color: rgba(0, 0, 0, 0.459);
+    margin:auto;
+    width:auto;
+    height: auto;
+    border-radius: 7px;
+    padding: 15px;
+   }
+
+   .loading-screen-wrapper img{
+       width: 200px;
+   }
+
+   
+/*spare*/
+   /*
+   .loading-screen-wrapper {
+  z-index: 100000;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.loading-screen-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+   */
+
+  /* loge loding... */
+ 

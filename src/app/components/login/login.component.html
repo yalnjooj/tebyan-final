@@ -1,0 +1,63 @@
+<!-- *ngIf="isOn -->
+ <div class="loading-screen-wrapper" *ngIf="loading">
+  <div class="loading-screen-icon">
+    <img src="../../../assets/img/logo-move.gif" alt="logo-move">
+      <h3 class="white">{{verfiyForm}}</h3>
+    <button  class="btn btn-success" (click)="loading= false">إلغاء</button>
+  </div>
+</div>
+
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/video/background.mp4" type="video/mp4">
+</video>
+    <!-- container-fluid // jumbotron-fluid-->
+        <div class="container-fluid">
+
+            <!-- end, center, between, around -->
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-right  right-side">
+                    <h1 class="display-4 broun">منصة مركز تبيان</h1><br/>
+                    <h1 class="display-6 broun">لإدارة الجهات التابعة للمركز</h1>
+                    <h1 class="display-4 broun">لإدارة الجهات التابعة للمركز</h1>
+                </div>
+
+                <div class="col-md-4 text-right left-side">
+                     <img class="rounded mx-auto d-block" alt="Logo Move" src="../../../assets/img/logo.png">
+                     <p class="font-site-20 text-center white">تسجيل دخول</p>
+
+                     <form novalidate #fo="ngForm" (ngSubmit)="mySubmit(fo)">
+                      <div class="form-group">
+                        <label for="email" class="white">البريد الإلكتروني:</label>
+                        <input type="email" name="email" id="email" placeholder="أدخل بريدك الإلكتروني" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" [(ngModel)]="user.email" #myemail="ngModel" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd" class="white">كلمة المرور:</label>
+                        <input type="password" id="pwd" name="pwd" placeholder="أدخل كملة المرور" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="user.pwd" #mypwd="ngModel" required>
+                      </div>
+                      <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <a routerLink="/sendemail">نسيت كملة المرور؟</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary" routerLink="/{{route}}">دخول</button>
+                      
+                      <div *ngIf="myemail.errors?.required && myemail.touched" class="alert alert-danger">أدخل البريد الإلكتروني</div>
+                      <div *ngIf="myemail.errors?.pattern && myemail.touched" class="alert alert-danger">صيغة غير صحيحة!</div>
+
+                      <div *ngIf="mypwd.errors?.required && mypwd.touched" class="alert alert-danger">أدخل كلمة المرور</div>
+                      <div *ngIf="mypwd.errors?.pattern && mypwd.touched" class="alert alert-danger">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>
+                    </form>
+                    
+                    {{verfiyForm}}
+                    <div class="row text-center footer">
+                      <div class="col-md-3"><a href="http://tebyaan.org/" target="_blank"><img src="../../../assets/img/clipart966995.png"/></a></div>
+                      <div class="col-md-3"><a href="https://www.snapchat.com/add/tbyantaif" target="_blank"><img src="../../../assets/img/clipart799526.png"/></a></div>
+                      <div class="col-md-3"><a href="https://twitter.com/tbyantaif" target="_blank"><img src="../../../assets/img/clipart363919.png"/></a></div>
+                      <div class="col-md-3"><a href="https://api.whatsapp.com/send?phone=966554450696" target="_blank"><img src="../../../assets/img/clipart452685.png"/></a></div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+
